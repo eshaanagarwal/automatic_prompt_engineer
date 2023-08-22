@@ -2,6 +2,7 @@ import random
 
 import fire
 
+import openai
 from automatic_prompt_engineer import ape, data
 from experiments.data.instruction_induction.load_data import load_data, tasks
 from experiments.evaluation.instruction_induction.exec_accuracy import exec_accuracy_evaluator
