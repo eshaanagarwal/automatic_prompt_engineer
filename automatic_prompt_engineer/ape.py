@@ -76,7 +76,7 @@ def simple_eval(dataset,
     eval_template = template.EvalTemplate(eval_template)
     demos_template = template.DemosTemplate(demos_template)
     conf = config.update_config({}, 'configs/default.yaml')
-    conf['evaluation']['model']['gpt_config']['model'] = eval_model
+    conf['evaluation']['model']['gpt_config']['engine'] = eval_model
     conf['evaluation']['num_samples'] = min(len(dataset[0]), num_samples)
     res = evaluate.evalute_prompts(
         prompts, eval_template, dataset, demos_template, dataset, conf['evaluation']['method'], conf['evaluation'])

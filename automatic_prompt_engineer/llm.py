@@ -157,6 +157,7 @@ class GPT_Forward(LLM):
         response = None
         while response is None:
             try:
+                config["engine"] = "text-davinci-003"
                 response = openai.Completion.create(
                     **config, prompt=prompt)
             except Exception as e:
