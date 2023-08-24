@@ -160,6 +160,7 @@ class GPT_Forward(LLM):
                 config["engine"] = "text-davinci-003"
                 response = openai.Completion.create(
                     **config, prompt=prompt)
+                time.sleep(5)
             except Exception as e:
                 if 'is greater than the maximum' in str(e):
                     raise BatchSizeException()
@@ -183,6 +184,7 @@ class GPT_Forward(LLM):
             try:
                 response = openai.Completion.create(
                     **config, prompt=prompt)
+                time.sleep(5)
             except Exception as e:
                 print(e)
                 print('Retrying...')
@@ -212,6 +214,7 @@ class GPT_Forward(LLM):
             try:
                 response = openai.Completion.create(
                     **config, prompt=text)
+                time.sleep(5)
             except Exception as e:
                 print(e)
                 print('Retrying...')
@@ -319,6 +322,7 @@ class GPT_Insert(LLM):
             try:
                 response = openai.Completion.create(
                     **config, prompt=prefix, suffix=suffix)
+                time.sleep(5)
             except Exception as e:
                 print(e)
                 print('Retrying...')
